@@ -1,0 +1,243 @@
+var surgepi;
+var banned = false;
+let something = document.createElement("script");
+something.src = "https://api.ipify.org?format=jsonp&callback=getIP";
+document.head.appendChild(something);
+function getIP(_0xc037x5) {
+  surgepi = _0xc037x5.ip;
+}
+var getJSON = function (_0xc037x7, _0xc037x8) {
+  var _0xc037x9 = new XMLHttpRequest;
+  _0xc037x9.open("GET", _0xc037x7, true);
+  _0xc037x9.responseType = "json";
+  _0xc037x9.onload = function () {
+    var _0xc037xa = _0xc037x9.status;
+    if (_0xc037xa === 200) {
+      _0xc037x8(null, _0xc037x9.response);
+    } else {
+      _0xc037x8(_0xc037xa, _0xc037x9.response);
+    }
+  };
+  _0xc037x9.send();
+};
+getJSON("https://ireadyadmin.eclipseeevee.repl.co/banned.json", function (_0xc037xb, _0xc037xc) {
+  if (_0xc037xb !== null) {
+    alert("Something went wrong: " + _0xc037xb);
+  } else {
+    if (_0xc037xc.includes(surgepi)) {
+      banned = true;
+    }
+  }
+});
+let c = document.createElement("div");
+c.innerHTML = `${'\r\n  <div style="position:absolute;z-index:100000;top:50px;left:10px" id="reall">\r\n  <button id="surgehidebtn" onclick="hidesurge()">Hide</button> \r\n  <br>\r\n  <div style="border-style:double;background: none no-repeat scroll 0 0 #fff;left:10px" id="main">\r\n  <button onclick="surgeee()" style="background-color: #008CBA;">Pass Lesson</button>\r\n  <button onclick="surgepassinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal" class="modal">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content">\r\n    <span class="close">&times</span>\r\n    <p>Use this when you are in a lesson. Click Pass Lesson, then exit the lesson, and you will see that you passed it. Note that it does not pass the ENTIRE lesson, it only passes 1 part(like the instruction, the practice, and the quiz.) If it doesn\'t work, try to complete your current lesson manually then try again. The input below is how much score you want on a quiz.</p>\r\n  </div>\r\n\r\n</div>\r\n<br>\r\nScore: <input type="number" id="scoree" value="100" max="100">\r\n  <br><br>\r\n  <button onclick="surgeeee()" style="background-color: #008CBA;">Start Minutes Farm</button>\r\n    <button onclick="surgeminstartinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal1" class="modal1">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content1">\r\n    <span class="close1">&times;</span>\r\n    <p>Starts the minute farm. To use, go into a lesson, click Start Minutes Farm, then exit the lesson. Do not close the tab, but you may do anything else(play a game, put your computer to sleep.. ect) Don\'t do a lesson when this is in progress, and don\'t shut down your computer(sleeping is fine). Make sure to stop minute farming to get your minutes.</p>\r\n  </div>\r\n\r\n</div>\r\n  <br><br>\r\n  <button onclick="endsurge()" style="background-color: #008CBA;">End Minutes Farm</button>\r\n      <button onclick="surgeminendinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal2" class="modal2">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content2">\r\n    <span class="close2">&times;</span>\r\n    <p>Ends the minute farm. The minute count that you get is from when you started the minute farm to when you end it. Refresh page to get your minutes.</p>\r\n  </div>\r\n\r\n</div>\r\n  <br><br>\r\n  <button onclick="diasurge()" style="background-color: #008CBA;">Start Diagnostic Hack</button>\r\n        <button onclick="surgediastartinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal3" class="modal3">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content3">\r\n    <span class="close3">&times;</span>\r\n    <p>Starts the diagnostic hack. All answers you select will be correct, regardless of which answer you pick. Since your teacher can see this, I recommend to only use this for a while(getting every problem right on a diagnostic means you are in 12th grade)</p>\r\n  </div>\r\n\r\n</div>\r\n  <br><br>\r\n  <button onclick="diasurgeend()" style="background-color: #008CBA;">End Diagnostic Hack</button>\r\n          <button onclick="surgediaendinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal4" class="modal4">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content4">\r\n    <span class="close4">&times;</span>\r\n    <p>Ends the diagnostic hack. You are on your own now.</p>\r\n  </div>\r\n\r\n</div>\r\n  <br><br>\r\n  <button onclick="backgroundsurge()" style="background-color: #008CBA;">Change background</button>\r\n          <button onclick="backgroundsurgeinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal7" class="modal7">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content7">\r\n    <span class="close7">&times;</span>\r\n    <p>Put the image url below, and click change background.</p>\r\n  </div>\r\n\r\n</div>\r\n<input type="url" id="backgroundurl" value="https://newevolutiondesigns.com/images/freebies/cool-wallpaper-preview-1.jpg">\r\n  <br><br>\r\n    <button onclick="namesurge()" style="background-color: #008CBA;">Change name</button>\r\n          <button onclick="namesurgeinfo()" style="background-color: #f44336;">How to use</button>\r\n  <div id="myModal8" class="modal8">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content8">\r\n    <span class="close8">&times;</span>\r\n    <p>Enter your custom name below, and click Change name.</p>\r\n  </div>\r\n\r\n</div>\r\n<input type="text" id="changename" value="Phenomenon">\r\n<br><br>\r\n  Made by Phenomenon. <br>\r\n  This tool has code taken from <a href="https://github.com/ArjhanToteck/iReady-Overload">iReady Overload</a> by ArjhanToteck <br>with permission using the MIT license. <br>Copyright (c) 2021 ArjhanToteck.\r\n  <br>\r\n  By using this software, you are agreeing to <a href="javascript:surgeTOS()">the terms of service</a>\r\n    <div id="myModal6" class="modal6">\r\n\r\n  <!-- Modal content -->\r\n  <div class="modal-content6">\r\n    <span class="close6">&times;</span>\r\n    <p>Terms Of Service<br>\r\n    I am not responsible for anything you do with this. <br>License: <br>\r\n    Limitation of Liability Under no circumstances and under no legal theory, whether tort (including negligence), contract, or otherwise, shall any Contributor, or anyone who distributes Covered Software as permitted above, be liable to You for any direct, indirect, special, incidental, or consequential damages of any character including, without limitation, damages for lost profits, loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses, even if such party shall have been informed of the possibility of such damages. This limitation of liability shall not apply to liability for death or personal injury resulting from such party’s negligence to the extent applicable law prohibits such limitation. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so this exclusion and limitation may not apply to You.<br><br>\r\n    \r\n    You may not give this to anyone without credit.</p>\r\n  </div>\r\n\r\n</div>\r\n  <br><br>\r\n  Copyright 2021, Phenomenon, All rights reserved.\r\n  <br>\r\n  <button onclick="closee()">Close Hack</button>\r\n  </div>\r\n  </div>\r\n  <style>\r\nbody {font-family: Arial, Helvetica, sans-serif;}\r\n\r\n/* The Modal (background) */\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n/* The Modal (background) */\r\n.modal1 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content1 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close1 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close1:hover,\r\n.close1:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal2 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content2 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close2 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close2:hover,\r\n.close2:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal3 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content3 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close3 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close3:hover,\r\n.close3:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal4 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content4 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close4 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close4:hover,\r\n.close4:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal6 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content6 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close6 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close6:hover,\r\n.close6:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal7 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content7 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close7 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close7:hover,\r\n.close7:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n.modal8 {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Sit on top */\r\n  padding-top: 100px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content8 {\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close8 {\r\n  color: #aaaaaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close8:hover,\r\n.close8:focus {\r\n  color: #000;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n</style>'}`;
+document.body.appendChild(c);
+function surgeee() {
+  var csid = html5Iframe.src.split("?csid=")[1].split("&type")[0];
+  var scoree = document.getElementById("scoree").value;
+  var score = csid.includes("10_") ? null : `{"score":${scoree}}`;
+  fetch("https://login.i-ready.com/student/lesson/componentCompleted", {headers: {accept: "*/*", "accept-language": "en-US,en;q=0.9", "content-type": "application/json;charset=UTF-8", "sec-fetch-dest": "empty", "sec-fetch-mode": "cors", "sec-fetch-site": "same-origin", "sec-gpc": "1"}, referrer: "https://login.i-ready.com/student/dashboard/home", referrerPolicy: "strict-origin-when-cross-origin", body: `{\"componentStatusId\":\"${csid}\",\"instructionLessonOutcome\":${score}}`, method: "POST", mode: "cors", credentials: "include"});
+  alert("lesson passed :D");
+}
+function surgeeee() {
+  var csid = html5Iframe.src.split("?csid=")[1].split("&type")[0];
+  var minutes = 45;
+  document.cookie = `csid=${csid}; expires=Thu, 18 Dec 2999 12:00:00 UTC"`;
+  document.cookie = `minutes=${minutes}; expires=Thu, 18 Dec 2999 12:00:00 UTC"`;
+  csid = getCookie("csid");
+  fetch(`https://login.i-ready.com/student/v1/web/lesson_component/${csid}?action=resume`, {headers: {accept: "application/json, text/plain, */*", "accept-language": "en-US,en;q=0.9", "sec-fetch-dest": "empty", "sec-fetch-mode": "cors", "sec-fetch-site": "same-origin"}, referrer: "https://login.i-ready.com/student/dashboard/home", referrerPolicy: "strict-origin-when-cross-origin", body: null, method: "GET", mode: "cors", credentials: "include"});
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  alert("Close the lesson, but stay on this page. make sure to not do lessons or close this tab, but u can do anything else, even turn off ur computer. just make sure to end the minute farm when u want.");
+}
+function endsurge() {
+  csid = getCookie("csid");
+  fetch(`https://login.i-ready.com/student/v1/web/lesson_component/${csid}?action=pause`, {headers: {accept: "application/json, text/plain, */*", "accept-language": "en-US,en;q=0.9", "sec-fetch-dest": "empty", "sec-fetch-mode": "cors", "sec-fetch-site": "same-origin"}, referrer: "https://login.i-ready.com/student/dashboard/home", referrerPolicy: "strict-origin-when-cross-origin", body: null, method: "GET", mode: "cors", credentials: "include"});
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  alert("refresh your page to see the added minutes.");
+}
+function diasurge() {
+  var duration = 1e3;
+  XMLHttpRequest.prototype.realSend = XMLHttpRequest.prototype.send;
+  XMLHttpRequest.prototype.send = function (body) {
+    newBody = JSON.parse(body);
+    if (newBody.correct == false) newBody.correct = true;
+    if (newBody.durationSeconds != undefined) newBody.durationSeconds = duration;
+    this.realSend(JSON.stringify(newBody));
+  };
+  alert("All answers inputed will be correct. Your teacher can see this, make sure to turn the hack off when you want to get a problem wrong, also don't answer questions too fast, or you will be marked as rushed.");
+}
+function diasurgeend() {
+  XMLHttpRequest.prototype.send = XMLHttpRequest.prototype.realSend;
+  XMLHttpRequest.prototype.realSend = undefined;
+  alert("Hack was disabled. Your answers might not be corerct anymore.");
+}
+function backgroundsurge() {
+  let _0x48ffx2 = document.getElementById("backgroundurl").value;
+  function _0x48ffx3() {
+    document.getElementById("background-image").src = _0x48ffx2;
+    localStorage.setItem("background", _0x48ffx2);
+    document.getElementById("game_button0").id = "jdjgjdkgj";
+    document.getElementById("BeGooped_card").id = "jhgkdhgh";
+  }
+  setInterval(_0x48ffx3, 1);
+}
+function namesurge() {
+  let namesurge = document.getElementById("changename").value;
+  function _0x48ffx5() {
+    let _0x48ffx6 = document.getElementsByClassName("css-1ii68kw e15psnz1")[0].innerHTML = namesurge;
+    localStorage.setItem("name", namesurge);
+  }
+  setInterval(_0x48ffx5, 1);
+}
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+function surgepassinfo() {
+  modal.style.display = "block";
+}
+span.onclick = function () {
+  modal.style.display = "none";
+};
+window.onclick = function (_0x48ffxa) {
+  if (_0x48ffxa.target == modal) {
+    modal.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal1) {
+    modal1.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal2) {
+    modal2.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal3) {
+    modal3.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal4) {
+    modal4.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal6) {
+    modal6.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal7) {
+    modal7.style.display = "none";
+  }
+  ;
+  if (_0x48ffxa.target == modal8) {
+    modal8.style.display = "none";
+  }
+};
+var modal1 = document.getElementById("myModal1");
+var span1 = document.getElementsByClassName("close1")[0];
+function surgeminstartinfo() {
+  modal1.style.display = "block";
+}
+span1.onclick = function () {
+  modal1.style.display = "none";
+};
+var modal2 = document.getElementById("myModal2");
+var span2 = document.getElementsByClassName("close2")[0];
+function surgeminendinfo() {
+  modal2.style.display = "block";
+}
+span2.onclick = function () {
+  modal2.style.display = "none";
+};
+var modal3 = document.getElementById("myModal3");
+var span3 = document.getElementsByClassName("close3")[0];
+function surgediastartinfo() {
+  modal3.style.display = "block";
+}
+span3.onclick = function () {
+  modal3.style.display = "none";
+};
+var modal4 = document.getElementById("myModal4");
+var span4 = document.getElementsByClassName("close4")[0];
+function surgediaendinfo() {
+  modal4.style.display = "block";
+}
+span4.onclick = function () {
+  modal4.style.display = "none";
+};
+var modal6 = document.getElementById("myModal6");
+var span6 = document.getElementsByClassName("close6")[0];
+function surgeTOS() {
+  modal6.style.display = "block";
+}
+span6.onclick = function () {
+  modal6.style.display = "none";
+};
+var modal7 = document.getElementById("myModal7");
+var span7 = document.getElementsByClassName("close7")[0];
+function backgroundsurgeinfo() {
+  modal7.style.display = "block";
+}
+span7.onclick = function () {
+  modal7.style.display = "none";
+};
+var modal8 = document.getElementById("myModal8");
+var span8 = document.getElementsByClassName("close8")[0];
+function namesurgeinfo() {
+  modal8.style.display = "block";
+}
+span8.onclick = function () {
+  modal8.style.display = "none";
+};
+function hidesurge() {
+  var _0x48ffx21 = document.getElementById("main");
+  var _0x48ffx22 = document.getElementById("surgehidebtn");
+  if (_0x48ffx21.style.display === "none") {
+    _0x48ffx21.style.display = "block";
+    _0x48ffx22.innerHTML = "Hide";
+  } else {
+    _0x48ffx21.style.display = "none";
+    _0x48ffx22.innerHTML = "Show";
+  }
+}
+function closee() {
+  document.getElementById("reall").remove();
+  alert("Hacked closed. Refresh the page and add it back if you want.");
+}
+var autoname = localStorage.getItem("name");
+if (!autoname) {
+  autoname = "Phenomenon";
+}
+;
+document.getElementById("changename").value = autoname;
+var background = localStorage.getItem("background");
+if (!background) {
+  background = "https://newevolutiondesigns.com/images/freebies/cool-wallpaper-preview-1.jpg";
+}
+;
+document.getElementById("backgroundurl").value = background;
